@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+    <div class="post-content clearfix" style="    border: 1px black solid;">
+        <h1>python安全测试API测试及性能测试</h1>
+        <h2 id="rest-api-testing-rest-api测试">REST API Testing REST API测试</h2>
+        <ul>
+            <li><a href="https://github.com/chitamoor/rester">Rester</a> - 测试RESTful API的框架</li>
+            <li><a href="https://github.com/svanoort/pyresttest">pyresttest</a> - REST以及API microbenchmarking工具</li>
+            <li><a href="http://scastillo.github.com/siesta">siesta</a> - Python REST 客户端</li>
+        </ul>
+        <h2 id="virtual-environments-虚拟环境">Virtual environments 虚拟环境</h2>
+        <ul>
+            <li><a href="https://pypi.python.org/pypi/virtualenv">virtualenv</a> - 创建隔离的python开发环境的工具</li>
+            <li><a href="https://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a> - virtualenv的一些扩展</li>
+            <li><a href="https://pypi.python.org/pypi/tox">tox</a> - 虚拟环境管理，可以在不同的python版本上进行测试和截图</li>
+            <li><a href="https://pypi.python.org/pypi/pew/">pew</a> - 一些管理虚拟环境的工具</li>
+            <li><a href="https://github.com/sashahart/vex">Vex</a> - 在命名的虚拟环境运行命令</li>
+            <li><a href="https://www.egenix.com/products/python/PyRun/">PyRun</a> - 单文件无需按照的python版本</li>
+            <li><a href="https://github.com/yyuu/pyenv">pyenv</a> - 简单的python版本管理</li>
+            <li><a href="https://tapper.github.io/Tapper/">Tapper</a> - all-embracing test infrastructure.</li>
+        </ul>
+        <h2 id="performance-stress-load-性能测试">Performance &amp; stress &amp; load 性能测试</h2>
+        <ul>
+            <li><a href="http://testutils.org/multi-mechanize/">Multi-Mechanize</a> - 开源的性能测试框架</li>
+            <li><a href="https://github.com/locustio/locust">locust</a> - 可扩展的python性能测试工具</li>
+            <li><a href="https://github.com/yandex/yandex-tank">Yandex.Tank</a> - 性能及benchmark工具</li>
+            <li><a href="https://github.com/ionelmc/pytest-benchmark">pytest-benchmark</a> - py.test的benchmark工具</li>
+            <li><a href="https://github.com/spacetelescope/asv">Airspeed Velocity</a> - 简单的Python benchmarking工具自带基于web的报告</li>
+            <li><a href="http://grinder.sourceforge.net/">The Grinder</a> - 支持分布式的负载测试框架. 包含一些常规用例，比如 HTTP web servers, SOAP and REST web services, 和 application servers (CORBA, RMI, JMS, EJBs),以及定制化的协议. 测试脚本使用Jython和Clojure实现
+            </li>
+            <li><a href="http://tsung.erlang-projects.org/">Tsung</a> - 开源，支持多协议的分布式性能测试工具. 可以测试 HTTP, WebDAV, SOAP, PostgreSQL, MySQL, LDAP 和 Jabber/XMPP 服务</li>
+            <li><a href="http://gettaurus.org/">taurus</a> - 自动化友好的持续测试工具</li>
+        </ul>
+        <h2 id="security-checking-安全扫描">Security checking 安全扫描</h2>
+        <ul>
+            <li><a href="http://sparta.secforce.com/">sparta</a> - 支持gui的网络扫描工具</li>
+            <li><a href="https://code.google.com/p/zaproxy/wiki/ApiPython">OWASP ZAP</a> - 用python实现的OWASP ZAP-features API</li>
+            <li><a href="https://github.com/m4n3dw0lf/PytheM">pythem</a> - pythem是多用途的安全测试工具</li>
+        </ul>
+    </div>
+    <div class="post-content clearfix" style="    border: 1px black solid;">
+        <h1>python测试框架</h1>
+        <h2 id="xunit-frameworks-单元测试框架">xUnit frameworks(单元测试框架)</h2>
+        <ul>
+            <li>frameworks 框架
+                <ul>
+                    <li><a href="https://docs.python.org/library/unittest.html">unittest</a> - python自带的单元测试库，开箱即用</li>
+                    <li><a href="https://pypi.python.org/pypi/unittest2">unittest2</a> - 加强版的单元测试框架，适用于Python 2.7以及后续版本</li>
+                    <li><a href="http://pytest.org/">pytest</a> - 成熟且功能强大的单元测试框架</li>
+                    <li><a href="http://plugincompat.herokuapp.com/">plugincompat</a> - pytest的执行及兼容性插件</li>
+                    <li><a href="https://nose.readthedocs.org/en/latest/">nosetests</a> - 让python测试更容易一点</li>
+                    <li><a href="https://github.com/slash-testing/slash">slash</a> - python实现的单元测试框架</li>
+                </ul>
+            </li>
+            <li>extensions 扩展
+                <ul>
+                    <li><a href="https://pythonhosted.org/proboscis/">proboscis</a> - 仿TestNG扩展了unittest模块以及Nose的功能</li>
+                    <li><a href="https://github.com/wgnet/grail">grail</a> - 可以让你一步一步编写测试用例的库</li>
+                    <li><a href="https://github.com/Yelp/Testify/">testify</a> - 单元测试框架，提供了加强型fixture，用例切割并行运行，testrunner高亮及详尽的log和report功能</li>
+                    <li><a href="http://twistedmatrix.com/trac/wiki/TwistedTrial">trial</a> - unittest模块的扩展，提供了命令行的testrunner工具以及代码覆盖率的整合，跟nose差不多</li>
+                    <li><a href="https://launchpad.net/subunit">subunit</a> - 提供了unittest在另一个进程执行用例并汇总测试数据的能力</li>
+                    <li><a href="https://launchpad.net/testresources">testresources</a> - 提供了多用例间管理测试数据的机制，兼容unittest</li>
+                    <li><a href="https://launchpad.net/testtools">testtools</a> - 为Twisted和Bazaar提供的unittest扩展</li>
+                    <li><a href="https://www.mems-exchange.org/software/DurusWorks/">Sancho</a> - 运行用例，并为失败的用例提供报告，但仅限于此</li>
+                    <li><a href="https://pypi.python.org/pypi/zope.testing">zope.testing</a> - testrunner，提供了不错的debuge能力，并且集成了代码覆盖率。可以跟zope项目使用，也可以用在非zope项目上</li>
+                    <li><a href="http://pythoscope.org/">pythoscope</a> - 自动或半自动为遗留的python系统创建测试用例的工具</li>
+                    <li><a href="http://www.logilab.org/project/logilab-common/">testlib</a> - 更强大的unittest，更多的断言，支持module级的setup/teardown，skip test等…</li>
+                    <li><a href="https://pypi.python.org/pypi/dutest">dutest</a> - An object oriented interface to retrieve unittest test cases out of doctests. Hides initialization from doctests by allowing setUp and tearDown for each interactive example. Allows control over all the options provided by doctest. Specialized classes allow selective test discovery across a package hierarchy.</li>
+                    <li><a href="https://github.com/CleanCut/green">green</a> - Green是一个简洁多彩的testrunner，跟nose很像</li>
+                    <li><a href="https://github.com/txels/ddt">ddt</a> - 让unittest 支持 Data-Driven</li>
+                    <li><a href="https://github.com/kpodl/pytractor">pytractor</a> Selenium python bindings的扩展. 目的是让angular项目的测试更简单</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 id="tdd-atdd-bdd">TDD \ ATDD \ BDD</h2>
+        <ul>
+            <li>BDD
+                <ul>
+                    <li><a href="https://pypi.python.org/pypi/behave">behave</a> - BDD 框架</li>
+                    <li><a href="http://lettuce.it/">lettuce</a> - 又一个BDD框架
+                        <ul>
+                            <li><a href="https://github.com/telefonicaid/lettuce-tools">lettuce-tools</a> - 一整套lettuce扩展，让BDD更加简单</li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/benjamin-hodgson/Contexts">contexts</a> - Python的描述性测试工具</li>
+                    <li><a href="http://nestorsalceda.github.io/mamba/">mamba</a> - python的definitive testing 工具</li>
+                    <li><a href="http://heynemann.github.io/pyvows/">pyvows</a> - 异步的行为驱动开发测试工具</li>
+                    <li><a href="https://github.com/pytest-dev/pytest-bdd">pytest-bdd</a> - py.test runner的BDD库</li>
+                    <li><a href="http://robotframework.org/">robotframework</a> - 最有名的acceptance test-driven development (ATDD)测试框架
+                        <ul>
+                            <li><a href="https://github.com/fkromer/awesome-robotframework">awesome-robotframework</a> - 各种rf的扩展库</li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/radish-bdd/radish">radish-bdd</a> - BDD框架，支持gherkin语言</li>
+                </ul>
+            </li>
+            <li>Assertions 断言
+                <ul>
+                    <li><a href="https://github.com/drslump/pyshould">pyshould</a> - 基于pyhamcrest的Should style断言</li>
+                    <li><a href="https://github.com/hamcrest/PyHamcrest">pyhamcrest</a> - python版的Hamcrest matchers</li>
+                    <li><a href="https://github.com/gabrielfalcao/sure">sure</a> -python实现的测试库,提供了强大灵活的断言</li>
+                    <li><a href="https://github.com/ActivisionGameScience/assertpy">assertpy</a> - 巨简单的python单元测试断言库，提供了优雅流利的API. 支持Python 2 和 3.</li>
+                </ul>
+            </li>
+            <li>Mocking
+                <ul>
+                    <li><a href="https://pypi.python.org/pypi/mock">mock</a> - python实现的Mocking和Patching库</li>
+                    <li><a href="http://github.com/nsigustavo/ludibrio/">Ludibrio</a> - 用python实现的优雅的test doubles框架(mocks, stubs, spy, and dummies).</li>
+                    <li><a href="https://github.com/dropbox/responses">responses</a> - mock请求的 Python测试工具库</li>
+                    <li><a href="https://pypi.python.org/pypi/doublex">doublex</a> - 强大的 test doubles 框架</li>
+                    <li><a href="https://github.com/spulec/freezegun">freezegun</a> - 通过mocking datetime模块实现时光穿梭</li>
+                    <li><a href="http://falcao.it/HTTPretty/">httpretty</a> - HTTP请求的mock工具</li>
+                    <li><a href="https://github.com/patrys/httmock">httmock</a> - requests的mock工具，支持Python 2.6+ and 3.2+.</li>
+                    <li><a href="https://github.com/pretenders/pretenders">pretenders</a> - 测试用的fake server</li>
+                    <li><a href="https://github.com/tomashanacek/mock-server">mock-server</a> - 简单的mock sever，支持REST and XML-RPC API，还有基于tornado的管理界面</li>
+                    <li><a href="https://github.com/kevin1024/vcrpy">VCR.py</a> - 自动 mock HTTP 交互 让测试更简单快速</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="post-content clearfix" style="    border: 1px black solid;">
+        <h1>python测试数据生成及代码扫描最全资源列表</h1>
+        <h2 id="test-data-manipulation-测试数据的操作和处理">Test Data manipulation 测试数据的操作和处理</h2>
+        <ul>
+            <li><a href="http://www.joke2k.net/faker/">faker</a> - 生成假数据的python库</li>
+            <li><a href="https://github.com/emirozer/fake2db">fake2db</a> - 创建假数据库</li>
+            <li><a href="https://pypi.python.org/pypi/ForgeryPy">ForgeryPy</a> - 使用起来很简单的假数据生成库.</li>
+            <li><a href="https://pypi.python.org/pypi/radar">radar</a> - 随机生成时间</li>
+            <li><a href="https://github.com/guykisel/robotframework-faker">robotframework-faker</a> - faker的Robot Framework封装</li>
+            <li><a href="https://github.com/DRMacIver/hypothesis">hypothesis</a> - Library for property based testing in Python, based on the Haskell library Quickcheck.</li>
+            <li><a href="https://github.com/FactoryBoy/factory_boy">factory_boy</a> - <a href="https://github.com/thoughtbot/factory_girl">factory_girl</a>的python版本</li>
+            <li><a href="https://github.com/omaciel/fauxfactory">fauxfactory</a> - 随机数据生成器</li>
+        </ul>
+        <h2 id="code-analysis-代码扫描及分析">Code analysis 代码扫描及分析</h2>
+        <ul>
+            <li><a href="https://github.com/yinwang0/pysonar2">pysonar2</a> - 类型推断</li>
+            <li><a href="https://pypi.python.org/pypi/coverage">coverage</a> - 覆盖率</li>
+            <li><a href="https://github.com/gak/pycallgraph">pycallgraph</a> - 流程可视化</li>
+            <li><a href="https://pypi.python.org/pypi/flake8">Flake8</a> - The modular source code checker: pep8, pyflakes and co.</li>
+            <li><a href="https://pylama.readthedocs.org/">pylama</a> - Python and JavaScript的代码审查工具</li>
+            <li><a href="http://www.pylint.org/">Pylint</a> - 源代码分析器</li>
+            <li><a href="https://github.com/openstack-dev/hacking">hacking</a> - OpenStack Hacking Style Checks (<code>flake8</code> plugins).</li>
+            <li><a href="https://github.com/landscapeio/prospector">prospector</a> - 代码分析工具，可以输出错误信息，潜在问题，不规范的代码以及代码复杂度</li>
+        </ul>
+    </div>
+    <div class="post-content clearfix" style="    border: 1px black solid;">
+        <h1>python持续集成测试报告及其他</h1>
+        <h2 id="continuous-integration-持续集成">Continuous Integration 持续集成</h2>
+        <ul>
+            <li><a href="https://pypi.python.org/pypi/buildbot/">buildbot</a> - 自动化编译发布系统。大部分的软件项目可用</li>
+            <li><a href="http://jenkins-ci.org/">jenkins</a> - 可扩展的开源持续集成server</li>
+            <li><a href="https://travis-ci.org/">travis-ci</a> - 免费的持续集成平台</li>
+        </ul>
+        <h2 id="reporting-报告">Reporting 报告</h2>
+        <ul>
+            <li><a href="https://github.com/allure-framework/allure-python">allure pytest</a> - PyTest的allure适配器</li>
+            <li><a href="http://tungwaiyip.info/software/HTMLTestRunner.html">HTMLTestRunner</a> - Python 标准库unittest的扩展. 生成简单好用的html报告</li>
+            <li><a href="https://github.com/xmlrunner/unittest-xml-reporting">unittest-xml-reporting</a> - 一个unittest test runner可以将测试结果保存到 XML文件。可高度定制</li>
+        </ul>
+        <h2 id="documentation-generation-文档生成">Documentation generation 文档生成</h2>
+        <ul>
+            <li><a href="http://sphinx-doc.org/">Sphinx</a> - Python文档生成器</li>
+            <li><a href="http://www.mkdocs.org/">MkDocs</a> - Markdown语法友好的文档生成器</li>
+            <li><a href="http://fitzgen.github.io/pycco/">Pycco</a> - The original quick-and-dirty, hundred-line-long, literate-programming-style documentation generator.</li>
+        </ul>
+        <h2 id="editors-ide-consoles-编辑器-ide以及命令行工具">Editors, IDE, consoles 编辑器, IDE以及命令行工具</h2>
+        <ul>
+            <li><a href="https://www.jetbrains.com/pycharm/">pycharm</a> - 智能的专业的python IDE</li>
+            <li><a href="http://pydev.org/">pydev</a> - eclipse 上全功能的python插件</li>
+            <li><a href="http://sublimetext.com/">sublime</a> - 简洁好用的文本编辑器</li>
+            <li><a href="http://ipython.org/">ipython</a> - 支持多语言的交互式shell, 最初是为python开发</li>
+        </ul>
+        <h2 id="useful-libs-有用的库">Useful libs 有用的库</h2>
+        <p>一些可以让你构建更好的自动化测试的库</p>
+        <ul>
+            <li><a href="https://pypi.python.org/pypi/requests/">requests</a> - Apache2 Licensed的HTTP库, python实现，api友好</li>
+            <li><a href="http://webtest.readthedocs.org/en/latest/">WebTest</a> - WebTest帮助你测试 WSGI-based web应用</li>
+            <li><a href="http://lxml.de/">lxml</a> - 功能强大使用简单的XML和HTML处理器</li>
+            <li><a href="https://fedorahosted.org/suds/">suds</a> - 轻量的SOAP python客户端</li>
+            <li><a href="http://www.fabfile.org/">fabric</a> - shh到目标机器执行管理任务的python库和命令行工具</li>
+            <li><a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> - 解析html文档的包。可以用来从html里抓取数据，配合爬虫使用</li>
+            <li><a href="https://github.com/ChrisBeaumont/soupy">Soupy</a> - BeautifulSoup的封装，目的在做网页爬虫的时候可以更容易的构造复杂的查询</li>
+            <li><a href="https://pythonhosted.org/pyquery/">PyQuery</a> - Pyquery 使用jquery语法处理xml文档. API跟jquery尽可能的相似. pyquery 使用lxml快速操作xml和html</li>
+            <li><a href="https://github.com/vmalloc/waiting">waiting</a> - python utility library for waiting for predicates.</li>
+            <li><a href="https://github.com/tylertreat/Comcast/">Comcast</a> - 弱网模拟</li>
+            <li><a href="https://pypi.python.org/pypi/python-dateutil">dateutil</a> - Python 标准模块datetime的扩展</li>
+            <li><a href="https://code.google.com/p/python-tesseract/">python-tesseract</a> - tesseract OCR 的封装(Linux &amp; Mac &amp; Windows)</li>
+            <li><a href="https://github.com/diyan/pywinrm/">pywinrm</a> - Windows Remote Management (WinRM)的python客户端. 可以在任何按照了python的远程windows机器上执行命令. WinRM可以调用 Windows的native对象. 包括但不限于运行批处理脚本, powershell脚本和获取WMI变量. 更多关于 WinRM的信息请访问微软的 WinRM站点</li>
+            <li><a href="http://www.fig.sh/">fig</a> - 使用<a href="https://www.docker.com/">Docker</a>快速构建隔离的开发环境</li>
+            <li><a href="http://bitbucket.org/haard/gitapi">gitapi</a> - 纯Python实现的git API</li>
+            <li><a href="https://github.com/irmen/Pyro4">Pyro4</a> - Pyro 可以构建一种内部的objects通过网络进行通信的应用</li>
+            <li><a href="https://github.com/boppreh/keyboard">keyboard</a> - 模拟全局的键盘事件，支持 Windows 和 Linux</li>
+            <li><a href="http://errbot.io/en/latest/">Errbot</a> - Errbot 一个聊天机器人</li>
+            <li><a href="https://github.com/python-tap/tappy">tappy</a> - tappy 是支持Test Anything Protocol (TAP)协议的一组Python工具库. TAP 是line based 测试协议，目的是使用标准的方式录制测试数据</li>
+            <li><a href="https://github.com/ponty/pyscreenshot">pyscreenshot</a> - pyscreenshot 模块可以把屏幕的内容拷贝给PIL或Pillow库去处理。 可以用来替换ImageGrab模块（只支持Windows）,所以windows不需要使用该库</li>
+            <li><a href="https://github.com/skorokithakis/tbvaccine">TBVaccine</a> - TBVaccine可以清晰打印出python的错误堆栈。 它可以自动高亮你关心的行，并将变量着色，让堆栈更容易分析</li>
+            <li><a href="https://github.com/tylerlaberge/PyPattyrn">PyPattyrn</a> - PyPattyrn 是一个可以让你更快速和更容易实现设计模式的python包</li>
+            <li><a href="http://spyne.io/">Spyne</a> - Spyne is a Python RPC toolkit that makes it easy to expose online services that have a well-defined API using multiple protocols and transports.</li>
+            <li><a href="https://pexpect.readthedocs.io/en/stable/">Pexpect</a> - Pexpect 让 Python 可以更好的控制其他应用</li>
+            <li><a href="https://github.com/bayandin/devtools-proxy">devtools-proxy</a> - Chrome DevTools的代理. 完全兼容Selenium和ChromeDriver</li>
+        </ul>
+        <h1 id="resources-资源">Resources 资源</h1>
+        <p>发现新的库，资讯以及工具</p>
+        <ul>
+            <li><a href="https://github.com/Junnplus/awesome-python-books">python books</a></li>
+        </ul>
+        <h2 id="websites-网站">Websites 网站</h2>
+        <ul>
+            <li><a href="http://automated-testing.info/">automated-testing.info</a> - 自动化测试社区</li>
+            <li><a href="http://atinfo.github.io/at.info-knowledge-base/">atinfo.github.io/at.info-knowledge-base</a> - 各种工具和技术实现的自动化测试的例子</li>
+            <li><a href="http://www.testclass.net/">测试教程网</a>: 最权威的中文测试教程汇总网站</li>
+        </ul>
+    </div>
+    <div class="post-content clearfix" style="    border: 1px black solid;">
+        <h1>python自动化测试工具</h1>
+        <h2 id="web-ui-test-automation-web-ui-自动化">Web UI test automation Web UI 自动化</h2>
+        <ul>
+            <li>libraries 各种库
+                <ul>
+                    <li><a href="https://pypi.python.org/pypi/selenium">selenium webdriver</a> - 浏览器自动化工具</li>
+                    <li><a href="https://github.com/cobrateam/splinter">splinter</a> - 简单的web自动化工具，让元素定位，表单提交等更加容易</li>
+                    <li><a href="https://pypi.python.org/pypi/mechanize/">mechanize</a> - 有状态可编程的浏览器</li>
+                </ul>
+            </li>
+            <li>frameworks and wrappers 框架和封装
+                <ul>
+                    <li><a href="https://github.com/element-34/py.saunter">py.saunter</a> - 有主见的自动化测试框架，使用了selenium RC和webdriver api</li>
+                    <li><a href="https://github.com/davehunt/pytest-mozwebqa">moz-web-qa</a> - py.test的插件，为Mozilla的WebQA项目提供了额外功能</li>
+                    <li><a href="http://testutils.org/sst">testutils sst</a> - A web test framework that uses Python to generate functional browser-based tests.</li>
+                    <li><a href="https://github.com/wiredrive/wtframework">wtframework</a> - 让web测试可以配置的框架</li>
+                    <li><a href="https://github.com/alisaifee/holmium.core">holmium.core</a> - Page Object及其他工具库支持</li>
+                    <li><a href="https://github.com/rtomac/robotframework-selenium2library">robotframework-selenium2library</a> - Robot Framework的selenium扩展</li>
+                    <li><a href="https://pypi.python.org/pypi/gocept.selenium">gocept.selenium</a> - selenium RC的API, 适合编写基于WSGI, Plone, Zope 2, ZTK, or Grok 应用的测试用例</li>
+                    <li><a href="https://github.com/wgnet/webium">webium</a> - 基于python的一个Page Object实现</li>
+                    <li><a href="https://github.com/luisxiaomai/robotframework-anywherelibrary">robotframework-anywherelibrary</a> - Robot Framework的扩展库，使用selenium2测试web应用，使用appium测试移动应用</li>
+                    <li><a href="https://github.com/ncbi/robotframework-pageobjects">robotframework-pageobjects</a> - 一个不错的Page Object实现，可以脱离robot framework单独使用。 具体看<a href="http://kahunacohen.com/2014/12/03/new-testing-paradigm-robotframework-pageobjects/">这里</a></li>
+                    <li><a href="https://github.com/actmd/elementium">elementium</a> - 用jQuery风格的语法糖来实现浏览器的自动化测试用例</li>
+                    <li><a href="http://www.slickqa.com/webdriver/python/">slickqa</a> - slick-webdriver-python 项目是python selenium binding的一个封装</li>
+                    <li><a href="https://github.com/yashaka/selene/">selene</a> - Concise UI 测试用例，使用python实现支持Ajax,PageObjects和Widgets</li>
+                    <li><a href="http://hitchtest.com/">hitch</a> - 编写基于service的应用的测试用例</li>
+                    <li><a href="http://needle.readthedocs.org/en/latest/">Needle</a> - Needle是基于图片比对的测试工作，它可以对web应用的一部分进行截图，然后跟预期结果的图片进行比对</li>
+                    <li><a href="https://github.com/mozilla/PyPOM">PyPOM</a> - PyPOM是另一个Page Object库，适用于Selenium和Splinter测试</li>
+                    <li><a href="https://github.com/schipiga/pom">POM</a> - POM是Page-Object-Model 微框架，目的是让Web UI测试更加简单，快速和有乐趣</li>
+                    <li><a href="https://github.com/omaciel/websmith">websmith</a> - Web测试的一套DSL</li>
+                    <li><a href="https://github.com/Skyscanner/pages">pages</a> - 轻量的page object库和组建</li>
+                    <li><a href="https://github.com/nextQE/widgetastic.core">widgetastic</a> - RedHat UI widget 组建框架</li>
+                    <li><a href="https://github.com/nextQE/navmazing">navmazing</a> - PageObjects based navigation from RedHat</li>
+                    <li><a href="https://github.com/nextQE/nightwatch">nightwatch</a> - 基于python和selenium的UI 自动化测试框架. 灵感来源于nightwatch.js</li>
+                </ul>
+            </li>
+            <li>extensions 扩展
+                <ul>
+                    <li><a href="https://github.com/SergeyPirogov/webdriver_manager">webdriver_manager</a> - 主要目的是让不同版本的浏览器driver管理起来更加方便</li>
+                    <li><a href="https://github.com/pytest-dev/pytest-splinter">pytest_splinter</a> - pytest spinter 和 selenium的集成</li>
+                    <li><a href="https://github.com/bbangert/lettuce_webdriver">lettuce_webdriver</a> - Selenium webdriver 的 lettuce封装</li>
+                    <li><a href="https://github.com/AutomatedTester/browsermob-proxy-py">Browsermob Proxy</a> - python的Browsermob Proxy封装</li>
+                    <li><a href="https://github.com/joao-carloto/FireRobot">FireRobot</a> - 一个Firefox的扩展,让你可以更高效的编写基于robot framework的selenium用例</li>
+                    <li><a href="https://github.com/kpodl/pytractor">pytractor</a> - Python的selenium扩展，以便更好的测试angular.js应用</li>
+                    <li><a href="https://github.com/cryzed/Selenium-Requests">Selenium-Requests</a> - 扩展 Selenium WebDriver类，包含了Requests库的一些功能，可以更方便的处理cookie和请求头</li>
+                    <li><a href="https://github.com/SerpentAI/selenium-respectful">selenium-respectful</a> - selenium的封装，可以并行访问站点</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 id="mobile-test-automation-移动端自动化测试工具">Mobile test automation 移动端自动化测试工具</h2>
+        <ul>
+            <li><a href="http://appium.io/">appium</a> - 开源的自动化测试框架，可以测试native/hybrid/mobile web应用。核心是基于webdriver协议进行了扩展</li>
+            <li><a href="https://github.com/2gis/Winium.StoreApps/">Winium.StoreApps</a> - 开源的自动化测试用具，用来测试Windows Store应用，实现了Selenium Remote WebDriver</li>
+            <li><a href="https://github.com/lovelysystems/robotframework-androidlibrary">robotframework-androidlibrary</a> - Robot Framework用来测试android应用的扩展库</li>
+            <li><a href="https://github.com/jollychang/robotframework-appiumlibrary">robotframework-appiumlibrary</a> - appium的RobotFramework扩展</li>
+            <li><a href="https://github.com/lovelysystems/robotframework-ioslibrary">robotframework-ioslibrary</a> -Robot的ios测试扩展库</li>
+            <li><a href="https://github.com/xiaocong/uiautomator">uiautomator</a> - Android uiautomator的python封装, 支持 Android 4.1+</li>
+            <li><a href="https://github.com/NetEaseGame/ATX">ATX</a> - 智能机自动化测试工具. 支持 iOS, Android, WebApp 和游戏</li>
+        </ul>
+        <h2 id="windows-ui-test-automation-windows的ui测试工具">Windows UI test automation Windows的UI测试工具</h2>
+        <ul>
+            <li><a href="https://github.com/2gis/Winium.Desktop/">Winium.Desktop</a> - 测试Windows应用(主要是基于WinForms和WPF平台)的自动化测试工具. 实现了Selenium Remote WebDriver协议</li>
+            <li><a href="https://pypi.python.org/pypi/PyAutoGUI">PyAutoGUI</a> - 跨平台的GUI测试工具，支持通过python脚本控制键盘和鼠标</li>
+            <li><a href="https://code.google.com/p/robotframework-autoitlibrary/">robotframework-autoitlibrary</a> - Robot Framework的windows GUI测试扩展</li>
+            <li><a href="https://github.com/msanders/autopy">autopy</a> - 简单跨平台的GUI测试工具集</li>
+            <li><a href="https://pypi.python.org/pypi/UISoup/">UISoup</a> - 支持windows和MacOS平台的UI自动化(仅工作在x86平台)</li>
+            <li><a href="http://pywinauto.github.io/">pywinauto</a> - 非常有python面向对象风格的GUI测试库，现已支持64位机器以及py2和py3</li>
+            <li><a href="http://sikulix.com/">SikuliX</a> - 基于OpenCV的 GUI 测试框架, 使用图片识别技术，支持python2.7</li>
+        </ul>
+        <h2 id="unix-linux-ui-test-automation">Unix \ Linux UI test automation</h2>
+        <ul>
+            <li><a href="https://pypi.python.org/pypi/ldtp">ldtp</a> - 跨平台的linux GUI测试项目</li>
+            <li><a href="https://github.com/01org/fMBT">fMBT</a> - 支持多平台的python GUI测试库</li>
+            <li><a href="http://sikulix.com/">SikuliX</a> - 基于OpenCV的 GUI 测试框架, 使用图片识别技术，支持python2.7</li>
+        </ul>
+        <h2 id="macos-ui-test-automation-macos-ui自动化测试工具">MacOS UI test automation MacOS UI自动化测试工具</h2>
+        <ul>
+            <li><a href="https://github.com/pyatom/pyatom">ATOMac</a> - 通过Apple Accessibility API来测试Mac应用的python库</li>
+            <li><a href="https://pypi.python.org/pypi/PyAutoGUI">PyAutoGUI</a> - 跨平台的GUI测试工具，支持通过python脚本控制键盘和鼠标</li>
+            <li><a href="http://sikulix.com/">SikuliX</a> - 基于OpenCV的 GUI 测试框架, 使用图片识别技术，支持python2.7</li>
+        </ul>
+    </div>
+    <div class="post-content clearfix" style="    border: 1px black solid;">
+        <h1>Java测试相关资源汇总</h1>
+        <h2 id="virtual-environments-虚拟化环境">Virtual environments 虚拟化环境</h2>
+        <ul>
+            <li><a href="https://www.vagrantup.com/">Vagrant</a> - 配置简单可信赖的虚拟化环境管理工具</li>
+            <li><a href="https://www.docker.com/">Docker</a> - docker就不用多说了</li>
+        </ul>
+        <h2 id="performance-stress-load-性能测试">Performance &amp; stress &amp; load 性能测试</h2>
+        <ul>
+            <li><a href="http://jmeter.apache.org/">Apache JMeter</a> - 支持性能及功能测试</li>
+            <li><a href="http://grinder.sourceforge.net/">The Grinder</a> - 使用多台测试机运行分布式性能测试的框架</li>
+            <li><a href="http://automatictester.github.io/lightning/">Lightning</a> - 融合JMeter，不支持功能测试，支持CI/CD</li>
+            <li><a href="http://tsung.erlang-projects.org/">Tsung</a> - 基于Erlang的性能测试工具，支持多协议</li>
+            <li><a href="http://gatling.io/">Gatling</a> - Gatling是基于Scala, Akka 和 Netty的开源性能测试框架. 非常适合做压力测试。它的设计初衷是易用，好维护和高性能。 DSL易于理解，测试场景可以自解释，脚本维护简单，可以直接在代码库中进行管理。</li>
+        </ul>
+        <h2 id="build-tools-构建工具">Build Tools 构建工具</h2>
+        <ul>
+            <li><a href="http://ant.apache.org/">Apache Ant</a> - 不用多解释了，构建java项目的自动化工具</li>
+            <li><a href="http://maven.apache.org/">Apache Maven</a> - Apache Maven 是软件项目管理的综合工具. 基于 project object model (POM), Maven可以从中心信息管理项目构建,报告及文档</li>
+            <li><a href="https://gradle.org/">Gradle</a> - Gradle 是开源的自动化构建系统。 Gradle可以自动化的构建，测试，发布及部署。</li>
+        </ul>
+        <h2 id="continuous-integration-持续集成">Continuous Integration 持续集成</h2>
+        <ul>
+            <li><a href="http://jenkins-ci.org/">jenkins</a> - 可扩展的开源持续集成server</li>
+            <li><a href="https://www.jetbrains.com/teamcity/">TeamCity</a> - 功能强大，用户友好的持续集成及部署工具，开箱即用</li>
+        </ul>
+        <h2 id="reporting-报告">Reporting 报告</h2>
+        <ul>
+            <li><a href="https://github.com/reportportal/reportportal">ReportPortal</a> - 强大的服务端报告工具。降低了处理结果的工作量。 提供了测试执行的历史数据，日志截图以及任意二进制文件的记录和存储。</li>
+            <li><a href="https://docs.qameta.io/allure/latest">Allure</a> - 开源框架，目的是为团队中的每个人创建清晰的测试报告。</li>
+            <li><a href="https://github.com/d10xa/gradle-allure-plugin">Gradle Allure Plugin</a> - 第三方的 Gradle Allure插件可以将Allure集成到spock, testing 和junit用例中。</li>
+            <li><a href="http://relevantcodes.com/extentreports-for-selenium/">ExtentReports</a> - HTML报告库支持.NET和Java，使使用简单，可以创建美观的测试报告。</li>
+            <li><a href="http://reportng.uncommons.org/">ReportNG</a> - ReportNG 是一个简单的 TestNG HTML报告插件。</li>
+        </ul>
+        <h2 id="editors-ide-consoles-编辑器-ide">Editors, IDE, consoles 编辑器 IDE</h2>
+        <ul>
+            <li><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a> - 免费开源的IDE 支持 Java, Groovy, Scala 和 Android 开发
+                <ul>
+                    <li><a href="http://perfect-test.com/index.php/ru/instruments-rus-menu/15-selenium-plugin-rus">IntelliJ IDEA Selenium plugin</a> - IntelliJ Idea 插件，使selenium用例编写更简单。</li>
+                </ul>
+            </li>
+            <li><a href="https://eclipse.org/ide/">Eclipse</a> - 最有名的JavaIDE同时也支持 C/C++和PHP
+                <ul>
+                    <li><a href="https://sourceforge.net/adobe/genie/wiki2/FAQ/">Genie plugin</a> - 测试AS 3.0 SWF和Flash游戏的功能测试工具
+                        <br>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="https://netbeans.org/features/index.html">NetBeans</a> - NetBeans IDE 是Java 8的官方IDE</li>
+        </ul>
+        <h2 id="orm-frameworks-and-libraries-orm框架和库">ORM frameworks and libraries ORM框架和库</h2>
+        <ul>
+            <li><a href="http://hibernate.org/orm/">Hibernate</a> - SSH里的H</li>
+            <li><a href="https://github.com/mongodb/morphia">Morphia</a> - Morphia一款是轻量的类型安全的MongoDB对象mapping库</li>
+            <li><a href="http://www.mybatis.org/mybatis-3">MyBatis</a> - MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。</li>
+        </ul>
+        <h2 id="useful-libs-有用的库">Useful libs 有用的库</h2>
+        <ul>
+            <li><a href="https://github.com/amaembo/streamex">StreamEx</a> - Java 8 Streams加强库。</li>
+            <li><a href="https://github.com/vavr-io/vavr">Vavr</a> - Vavr 是Java 8的object-functional 语言扩展, 目的是减少代码行数和增强代码质量。</li>
+            <li><a href="https://projectlombok.org/">Lombok</a> - Lombok是一个可以通过简单的注解形式来帮助我们简化消除一些必须有但显得很臃肿的Java代码的工具，通过使用对应的注解，可以在编译源码的时候生成对应的方法。</li>
+            <li><a href="https://eclipse.org/aspectj">AspectJ</a> - Java的面向切面编程工具.</li>
+            <li><a href="https://github.com/yandex-qatools/ashot">aShot</a> - WebDriver 截图工具.</li>
+            <li><a href="https://code.google.com/p/rest-assured/">rest-assured</a> - 用Java来测试REST服务比动态语言比如Ruby Groovy要难。 REST Assured 可以给Java带来类似动态语言测试REST服务的体验</li>
+            <li><a href="http://wiremock.org/">WireMock</a> 灵活的 web 服务mock库，跟一般的mock目的不同的是，WireMock使用了真实的web服务</li>
+            <li><a href="http://www.mock-server.com/">MockServer</a> 可以用来mock任何基于HTTP和HTTPS的系统 (比如services, web sites,等).</li>
+            <li><a href="http://www.xmlunit.org/">XMLUnit</a> - 测试和比较 XML，支持 Java 和 .NET</li>
+            <li><a href="https://github.com/awaitility/awaitility">Awaitility</a> - Awaitility是测试异步代码的库</li>
+            <li><a href="https://github.com/keepcosmos/beanmother">Beanmother</a> - 初始化Java Bean作为test data的库</li>
+        </ul>
+        <h1 id="resources-资源">Resources 资源</h1>
+        <ul>
+            <li><a href="http://thucydides.info/docs/thucydides-one-page/thucydides.html">Serenity BDD (Thucydides) libraries</a></li>
+            <li><a href="http://habrahabr.ru/post/168451/">Automation tests structure</a></li>
+        </ul>
+        <h2 id="websites-网站">Websites 网站</h2>
+        <ul>
+            <li><a href="http://automated-testing.info/">automated-testing.info</a> - 自动化测试社区</li>
+            <li><a href="http://atinfo.github.io/at.info-knowledge-base/">atinfo.github.io/at.info-knowledge-base</a> - 各种工具和技术实现的自动化测试的例子</li>
+            <li><a href="http://www.testclass.net/">测试教程网</a>: 最权威的中文测试教程汇总网站</li>
+            <li><a href="http://seleniumsimplified.com/">selenium-simplified</a> - 让selenium webdriver测试更简单</li>
+        </ul>
+    </div>
+    <div class="post-content clearfix" style="    border: 1px black solid;">
+        <h1>Java自动化测试工具汇总 </h1>
+        <h2 id="xunit-frameworks-单元测试框架">xUnit frameworks 单元测试框架</h2>
+        <ul>
+            <li><a href="http://junit.org/">JUnit</a> - 常用的测试框架</li>
+            <li><a href="http://testng.org/">TestNG</a> - 测试框架
+                <ul>
+                    <li><a href="https://github.com/sskorol/test-data-supplier">Test Data Supplier</a> - TestNG DataProvider封装，让数据的生成更加灵活</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 id="tdd-atdd-bdd">TDD \ ATDD \ BDD</h2>
+        <ul>
+            <li>工具
+                <ul>
+                    <li><a href="http://jbehave.org/">JBehave</a> - Behaviour-Driven Development (BDD)测试框架. BDD是从 test-driven development (TDD) 和 acceptance-test演进而来, 让用例的编写对新手更加友好和直觉化</li>
+                    <li><a href="https://github.com/cucumber/cucumber-jvm">Cucumber-JVM</a> - 纯 java的Cucumber实现,支持大部分流行的jvm语言</li>
+                    <li><a href="https://github.com/TNG/JGiven">JGiven</a> - 开发者友好且实用的BDD工具. 开发者使用纯java及流利API编写测试场景, JGiven负责生成领域专家可读的报告</li>
+                    <li><a href="http://easyb.org/">easyb</a> - Java平台的BDD框架. 通过使用Domain Specific Language(DSL), easyb致力于让文档可读可执行</li>
+                    <li><a href="http://robotframework.org/">robotframework</a> - 最有名的acceptance test-driven development (ATDD)测试框架
+                        <ul>
+                            <li><a href="https://github.com/fkromer/awesome-robotframework">awesome-robotframework</a> - 各种rf的扩展库</li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/greghaskins/spectrum">Spectrum</a> - BDD-style test runner，支持Java 8. 灵感来自于Jasmine, RSpec和Cucumber. -
+                    </li>
+                    <li><a href="https://github.com/porscheinformatik/cucumber-report-db">cucumber-report-db</a> - 把Cucumber的结果存到数据库里，并且提供测试报告</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 id="model-based-testing">Model-Based Testing</h2>
+        <ul>
+            <li><a href="http://graphwalker.org/">GraphWalker</a> - Model-Based测试框架. 这个工具可以从 graphml, dot 或 json文件中读取model，然后自动创建测试用例</li>
+        </ul>
+        <h2 id="code-analysis-and-coverage-代码扫描和代码覆盖率">Code analysis and coverage 代码扫描和代码覆盖率</h2>
+        <ul>
+            <li><a href="http://www.sonarqube.org/">SonarQube</a> - 管理代码质量的开源工具</li>
+            <li><a href="https://github.com/xvik/gradle-quality-plugin">Gradle Quality Plugin</a> - 静态代码分析工具，支持Java和Groovy，使用 Checkstyle, PMD, FindBugs 和CodeNarc. 插件使用了统一的控制台输出并简化了开发者的工作流: 查看不规范的错误时只需要留意控制台就好，并且控制台输出的体验跟java编译错误的输入体验一致</li>
+            <li><a href="https://github.com/teamed/qulice">Qulice</a> - Qulice是Java项目的代码扫描和质量控制工具. 包含了最好的静态代码扫描工具和预配置选项。你不需要单独再对这些工具进行配置了。</li>
+            <li><a href="https://github.com/jacoco/jacoco">JaCoCo</a> - JaCoCo是免费的代码覆盖率统计工具，应该也是应用最广泛的覆盖率工具了。</li>
+        </ul>
+        <h2 id="web-ui-test-automation-web-ui自动化工具">Web UI test automation web ui自动化工具</h2>
+        <ul>
+            <li>libraries
+                <ul>
+                    <li><a href="http://docs.seleniumhq.org/">Selenium</a> - 浏览器自动化工具</li>
+                    <li><a href="http://www.sikulix.com/">SikuliX</a> - 基于OpenCV的 GUI 测试框架, 使用图片识别技术，支持windows/linux/mac系统</li>
+                </ul>
+            </li>
+            <li>frameworks and wrappers 框架及封装
+                <ul>
+                    <li><a href="http://selenide.org/">Selenide</a> - 简洁的Selenium封装,让 UI用例的编写更容易</li>
+                    <li><a href="https://github.com/Coveros/selenified">Selenified</a> - 开源的测试框架，目的是让selenium测试更加简单,提供了简单的接口去添加测试报告，错误处理以及线程安全的运行模式。可以运行在本机或云端(Grid or SauceLabs).</li>
+                    <li><a href="http://www.thucydides.info/">Serenity BDD (Thucydides)</a> - 创新的开源库，让你可以更高效的编写用户验收用例, 并可以根据用例去生成项目文档及测试报告</li>
+                    <li><a href="https://github.com/yandex-qatools/htmlelements">htmlelements</a> - 让web测试时元素交互更加简单的java库</li>
+                    <li><a href="https://bitbucket.org/atlassian/atlassian-selenium">atlassian-selenium</a> - 让开发者可以更高效的编写Selenium/WebDriver功能测试的开源库</li>
+                    <li><a href="https://github.com/persado/stevia">stevia</a> - Persado出品的开源自动化测试框架</li>
+                    <li><a href="https://github.com/darcy-framework">darcy</a> - 开源的测试框架，支持java 8，提供了具有表意性以及使用简单的API</li>
+                    <li><a href="http://satisfy.tapack.io/">Satisfy</a> - 基于Thucydides和Jbehave的开源测试框架。支持WebUI, SOAP, REST, emails, files，并支持创建随机数据，开箱即用</li>
+                    <li><a href="https://github.com/epam/JDI/">JDI UI Test Automation Framework</a> - UI自动化测试框架。扩展了Page Object设计模式，并加入了一些常用的元素</li>
+                    <li><a href="http://gebish.org/">Geb Framework</a> - 基于groovy自动化测试框架。专为Webdriver Page Object设计模式以及Spock Framework(BDD)的集成而设计。</li>
+                    <li><a href="https://github.com/FluentLenium/FluentLenium">FluentLenium</a> - FluentLenium可以帮助你写出可读性好, 可重用, 可靠且灵活的Web UI功能测试用例. FluentLenium 提供了为Selenium实现的流利api,并为selenium用户的一些常见问题提供了解决方案。</li>
+                    <li><a href="https://github.com/paypal/SeLion">Selion</a> - 基于TestNG和Selenium提供了一系列的功能，让你可以在短时间内搞定webdriver. 支持web和移动端测试</li>
+                </ul>
+            </li>
+            <li>extensions 扩展
+                <ul>
+                    <li><a href="https://github.com/lightbody/browsermob-proxy">BrowserMob Proxy</a> -从浏览器获取性能数据的简单工具, 一般跟自动化工具，比如Selenium和Watir配合使用</li>
+                    <li><a href="https://github.com/groupon/Selenium-Grid-Extras">Selenium-Grid-Extras</a> - 让Selenium Grid 节点的管理更加简单， 并通过清理测试环境的方式让节点更加稳定</li>
+                    <li><a href="https://github.com/sterodium/selenium-grid-extensions">Selenium Grid Extensions</a> - 扩展了Selenium grid，以及可以在执行selenium用例的同时执行Sikuli用例</li>
+                    <li><a href="https://github.com/seleniumkit/gridrouter">Selenium Grid Router</a> 轻量级的server，作用是把Selenium Wedriver的请求分发到多个Selenium hub。</li>
+                    <li><a href="https://github.com/sskorol/docker-selenium-grid">Docker Selenium Grid</a> - 提供了native的视频录制功能，支持Selenium Grid，最初被设计为跟docker-selenium一同使用。</li>
+                    <li><a href="https://github.com/SergeyPirogov/video-recorder-java">Video Recorder Java</a> - 使用自动化测试用例来录制视频的java库</li>
+                    <li><a href="https://github.com/zalando/zalenium">Zalenium</a> - 提供一次性的灵活的Docker-based Selenium Grid视频录制功能, 支持实时预览和online/offline控制面板。</li>
+                    <li><a href="https://github.com/marcoslimaqa/sikuli-factory">SikuliFactory</a> - 为SikuliX提供了PageFactory实现。</li>
+                    <li><a href="https://github.com/mailosaur/mailosaur-java">Mailosaur</a> - 邮件自动化测试工具，基于Mailosaur。</li>
+                </ul>
+            </li>
+        </ul>
+        <h2 id="mobile-test-automation-移动自动化测试">Mobile test automation 移动自动化测试</h2>
+        <ul>
+            <li><a href="http://appium.io/">Appium</a> - 开源的自动化测试框架，可以测试native/hybrid/mobile web应用。核心是基于webdriver协议进行了扩展</li>
+            <li><a href="http://calaba.sh/">Calabash</a> - 跨平台的自动化测试框架，支持Android和iOS的原生应用以及hybrid应用。 Calabash的语法非常容易理解，甚至可以让非技术人员编写和执行基于上述平台的自动化测试用例。</li>
+            <li><a href="https://code.google.com/p/robotium/">Robotium</a> - 安卓自动化测试框架，支持原生及hybrid应用. Robotium让我们可以非常方便的编写强大和稳定的黑盒UI测试用例。 有了Robotium的支持, 测试开发工程师可以编写安卓应用的功能用例系统用例以及用户验收用例。</li>
+            <li><a href="http://developer.android.com/tools/help/uiautomator/index.html">UIautomator</a> - 提供了高效的测试UI的方式。 可以创建支持真机及模拟器运行的自动化测试用例，并包含了可以查看和分析安卓UI的viewer。</li>
+            <li><a href="https://code.google.com/p/android-test-kit/wiki/Espresso">Espresso</a> - 比较新的开源自动化测试框架, 让开发者和测试人员都可以编写UI用例。 Espresso的api简单且易学，你可以非常快的使用这个框架上手安卓自动化测试</li>
+        </ul>
+        <h2 id="api-test-automation-接口自动化测试">API test automation 接口自动化测试</h2>
+        <ul>
+            <li><a href="https://github.com/intuit/karate">Karate-DSL</a> - Karate是BDD风格的使用javascript实现的测试框架。可以让你调用任何web-service类型的接口并对响应进行断言。</li>
+        </ul>
+        <h2 id="windows-ui-test-automation-windows-ui自动化测试工具">Windows UI test automation windows ui自动化测试工具</h2>
+        <ul>
+            <li><a href="http://sikulix.com/">SikuliX</a> - 基于OpenCV的 GUI 测试框架, 使用图片识别技术，支持多操作系统</li>
+            <li><a href="https://github.com/2gis/Winium.Desktop/">Winium.Desktop</a> - 测试Windows应用(主要是基于WinForms和WPF平台)的自动化测试工具. 实现了Selenium Remote WebDriver协议</li>
+        </ul>
+        <h2 id="unix-linux-ui-test-automation-unix-linux-ui自动化工具">Unix \ Linux UI test automation Unix \ Linux ui自动化工具</h2>
+        <ul>
+            <li><a href="http://sikulix.com/">SikuliX</a> - 基于OpenCV的 GUI 测试框架, 使用图片识别技术，支持多操作系统</li>
+        </ul>
+        <h2 id="macos-ui-test-automation-mac-ui自动化工具">MacOS UI test automation mac ui自动化工具</h2>
+        <ul>
+            <li><a href="http://sikulix.com/">SikuliX</a> - 基于OpenCV的 GUI 测试框架, 使用图片识别技术，支持多操作系统</li>
+        </ul>
+        <h2 id="server-side-test-automation-服务端自动化测试工具">Server side test automation 服务端自动化测试工具</h2>
+        <ul>
+            <li><a href="https://github.com/christophd/citrus">Citrus</a> - Javas实现的测试框架，支持企业级SOA应用的e2e服务测试， 支持 HTTP, JMS, TCP/IP, FTP, SOAP协议，以及XML和JSON.</li>
+        </ul>
+    </div>
+</body>
+
+</html>
