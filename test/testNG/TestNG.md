@@ -171,12 +171,290 @@ testng.xml文件参数说明
 		</suite>
 
 
-##（六）
+##（六）TestNG 用例分组
+测试用例可以有多个维度去标识
 
-##（七）
+根据用例的重要程度划分：重要程度：低——>中——>高
 
-##（八）
+根据用例的类型划分：类型：正常——>异常
 
-##（九）
+TestNG 允许我们给测试用例贴标签。
 
-##（十）
+	import org.testng.annotations.Test;
+
+	import static org.testng.AssertJUnit.assertEquals;
+
+
+	@Test(groups = {"功能测试"})
+	public class TagTest {
+
+		@Test(groups={"高", "正常"})
+		public void testCase1(){
+			assertEquals(2+2, 4);
+		}
+
+		@Test(groups = {"高", "正常"})
+		public void testCase2(){
+			assertEquals(5-3, 2);
+		}
+		@Test(groups = {"中", "正常"})
+		public void testCase3(){
+			assertEquals(2/1, 2);
+		}
+
+		@Test(groups = {"低", "异常"})
+		public void testCase4(){
+			assertEquals(2/0, 1);
+		}
+
+	}
+	
+接下来配置 testng.xml 
+
+	<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+	<suite name="测试套件" verbose="1" >
+		<test name="简单测试">
+		<!--groups 测试组标签-->
+			<groups>
+				<!--run 运行测试-->
+				<run>
+					<!--exclude 排除不执行的测试用例 -->
+					<exclude name="异常"  />  
+					<!--include 指定执行的测试用例 -->
+					<include name="高"  />  
+				</run>
+			</groups>
+
+			<classes>
+				<class name="test.sample.TagTest"/>
+			</classes>
+		</test>
+	</suite>
+##（七）TestNG 用例执行顺序
+
+希望用例按照我们要求的顺序来执行
+
+	import org.testng.annotations.Test;
+	import static org.testng.AssertJUnit.assertEquals;
+
+
+	public class CaseRunTest {
+
+		@Test
+		public void testCase1(){
+			assertEquals(2+2, 4);
+		}
+
+		@Test
+		public void testCase2(){
+			assertEquals(2+2, 4);
+		}
+
+		@Test
+		public void testCase3(){
+			assertEquals(2+2, 4);
+		}
+	}
+	
+通过 testng.xml 文件修改配置。
+
+	<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+	<suite name="测试套件">
+		<!--preserve-order 参数用于控制测试用例的执行顺序 默认为true-->
+		<!--true，测试用例的排列顺序执行-->
+		<!--testCase > testCase1 > testCase2-->
+		<!--false，默认会按照用例的名称的有字母/数字的顺序执行-->
+		<!--testCase1 > testCase2 > testCase3-->
+		<test name="简单测试" preserve-order="false">
+			<classes>
+				<class name="test.sample.CaseRunTest">
+					<methods>
+						<include name="testCase3" />
+						<include name="testCase1" />
+						<include name="testCase2" />
+					</methods>
+				</class>
+			</classes>
+		</test>
+	</suite>	
+
+##（八）TestNG 用例依赖
+
+当某一条用例运行失败时，其它用例必然也会失败.可以设置用例之间的依赖。
+
+测试方法依赖
+
+	import org.testng.annotations.Test;
+	import static org.testng.AssertJUnit.assertEquals;
+
+
+	public class DependentMethodsTest {
+
+		@Test
+		public void testAdd1(){
+			assertEquals(3+1, 5);
+		}
+		
+		//dependsOnMethods 来设置用例的依赖
+		//当 testAdd1() 运行失败时，则 testAdd2() 不再被执行
+		@Test(dependsOnMethods = {"testAdd1"})
+		public void testAdd2(){
+			assertEquals(3+2, 5);
+		}
+
+	}
+
+
+测试组依赖
+
+	import org.testng.annotations.Test;
+	import static org.testng.AssertJUnit.assertEquals;
+
+
+	public class DependentGroupsTest {
+
+		@Test(groups={"funtest"})
+		public void testAdd1(){
+			assertEquals(3+1, 5);
+		}
+
+		@Test(groups={"funtest"})
+		public void testAdd2(){
+			assertEquals(3+2, 5);
+		}
+		
+		//dependsOnGroups 来设置组的依赖
+		//testAdd1/2/3同属于于 funtest组
+		//当有一条用例运行失败，则testAdd3() 不再执行
+		@Test(dependsOnGroups = {"funtest"})
+		public void testAdd3(){
+			assertEquals(3+2, 5);
+		}
+
+	}
+
+
+##（九）TestNG 用例参数化
+
+
+增加用例的可配置性和减少相同用例的编写。
+
+通过 @Parameters 实现参数化
+
+	import org.testng.annotations.Parameters;
+	import org.testng.annotations.Test;
+	import static org.testng.AssertJUnit.assertEquals;
+	
+	public class DataProviderTest {
+	
+	    @Test
+		//@Parameters 获取参数化数据,作为 testAdd1() 测试方法的参数
+	    @Parameters({"add1","add2","result"})
+	    public void testAdd1(int add1, int add2, int result){
+	        assertEquals(add1+ add2, result);
+	    }
+	
+	}
+
+
+具体的测试数据在 testng.mxl 文件中设置。
+
+	<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+	<suite name="测试套件">
+		<test name="简单测试">
+			<!--parameter 定义测试数据 name 参数名 value 参数值-->
+			<parameter name="add1" value="3"/>
+			<parameter name="add2" value="2"/>
+			<parameter name="result" value="5"/>
+			<classes>
+				<class name="test.sample.DataProviderTest" />
+			</classes>
+		</test>
+	</suite>
+
+通过 @DataProvider 实现参数化
+
+	import org.testng.annotations.DataProvider;
+	import org.testng.annotations.Test;
+	import static org.testng.AssertJUnit.assertEquals;
+
+	public class DataProviderTest {
+
+		// 定义对象数组
+		@DataProvider(name = "add")
+		public Object[][] Users() {
+			return new Object[][] {
+					{ 3, 2, 5 },
+					{ 2, 2, 4 },
+					{ 3, 3, 7 },
+			};
+		}
+		
+		//调用定义的对象数组，并通过参数获取相应的测试数据
+		@Test(dataProvider="add")		
+		public void testAdd2(int add1, int add2, int result){
+			assertEquals(add1+add2, result);
+		}
+
+	}
+
+##（十）TestNG 多线程运行用例
+
+TestNG 是支持多程技术的单元测试框架。适用于UI自动化测试
+
+多线程配置testng.xml文件
+
+	<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+	<!--parallel 设置多线程的级别划分-->
+	<!--parallel=“methods”: TestNG将在不同的线程中运行所有的测试方法-->
+	<!--parallel=“tests”: TestNG 将在同一个线程中运行相同的标记的所有方法-->
+	<!--parallel=“classes”: TestNG将在同一个线程中运行同一个类中的所有方法-->
+	<!--parallel=“instances”: TestNG将在同一个线程中运行相同实例中的所有方法-->
+	<!--thread-count 用于指定线程的个数-->
+	<suite name="测试套件" parallel="classes" thread-count="2" >
+		<test name="简单测试">
+			<classes>
+				<class name="test.sample.FirstTest" />
+				<class name="test.sample.SecondTest" />
+			</classes>
+		</test>
+	</suite>
+
+
+##（十一） TestNG 多线程运行用例
+菜单栏： “Run” –>“Edit Configuraction…
+
+![](https://i.imgur.com/mLId32A.png)
+
+选择运行测试用例的 testng.xml 文件–>“Configuration”–>“Listeners”–>
+
+勾选“Use default reporters” 选项， 最后点击“OK” 按钮， 完成设置
+
+##（十二） TestNG 其他使用技巧
+
+	import org.testng.annotations.Test;
+	import static org.testng.AssertJUnit.assertEquals;
+
+	public class OtherTest {
+
+		//enabled 设置用例是否跳过执行
+		//默认为true不跳过。false跳过执行
+		@Test(enabled = false)
+		public void testCase1(){
+			assertEquals(2+2, 4);
+		}
+
+		// timeOut 设置用例运行的超时间
+		@Test(timeOut = 3000)
+		public void testCase2() throws InterruptedException {
+			Thread.sleep(3001);
+		}
+
+		// expectedExceptions 用来预设用例运行会出现的异常
+		@Test(expectedExceptions = RuntimeException.class)
+		public void testCase3(){
+			assertEquals(2/0,1);
+		}
+
+	}
+
