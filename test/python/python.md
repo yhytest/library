@@ -1,5 +1,5 @@
 ##（一）Hello World
-新建名为print_report.py的文本文件,并添加注释
+新建名为print\_report.py的文本文件,并添加注释
 
 注释：帮助理解代码，暂时让某段代码失效
 
@@ -12,7 +12,7 @@
 
 
 ##（二）数字和计算
-新建名为report_with_math.py
+新建名为report\_with\_math.py
 	
 	print('本次测试覆盖了3个模块')
 	print('测试用例总数为: ', 30 + 40 + 30)
@@ -30,7 +30,7 @@
 
 ##（三）变量和名称
 
-新建名为report_with_var.py，内容如下
+新建名为report\_with\_var.py，内容如下
 
 	module_count = 3
 
@@ -72,7 +72,7 @@ f-string：可以方便的在字符串中包含变量
 module_count = 3
 f"本次测试覆盖了{module_count}个模块"，支持format语法
 
-新建名为report_with_f_string.py
+新建名为report\_with\_f\_string.py
 	
 	module_count = 3
 
@@ -120,7 +120,7 @@ f"本次测试覆盖了{module_count}个模块"，支持format语法
 	this is the last line
 	"""
 
-新建名为print_test_case.py
+新建名为print\_test\_case.py
 
 
 	test_scenario = "登录场景\n"
@@ -151,7 +151,7 @@ f"本次测试覆盖了{module_count}个模块"，支持format语法
 
 input()函数来获取用户输入的信息，并保存在变量里。
 
-新建名为gen_test_case.py
+新建名为gen\_test\_case.py
 
 	case_name = input("请输入用例名称:\n")
 	test_data = input("请输入用到的测试数据，比如: 测试站点=www.itest.info:\n")
@@ -185,7 +185,7 @@ unpack就是把一组数据按顺序的保存到变量里
 	script, the_var = argv # script='something.py' the_var='my_var'
 
 ---
-修改gen_test_case.py
+修改gen\_test\_case.py
 
 	#import关键字就可以把我们需要的内容导入进来，从而在脚本里使用。
 	from sys import argv
@@ -210,7 +210,7 @@ unpack就是把一组数据按顺序的保存到变量里
 
 ##（八）读取文件
 
-新建名为read_case.py
+新建名为read\_case.py
 
 	from sys import argv
 
@@ -234,6 +234,3 @@ unpack就是把一组数据按顺序的保存到变量里
 
 	$python read_case.py case001.txt
 
-##（九）
-
-##（十）
