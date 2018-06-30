@@ -5,10 +5,12 @@
 技术要点，必须保证根据文档从0开始把大部分的问题处理完，保证没有重大遗漏
 
 --------------
-
+Monday Tuesday Wednesday Thursday Friday Saturday Sunday 
+January February March April May June 
+July August September October November December
 ## maven  study         20180623
 ## 
 ## 
 ## linux shell base 20180628  day01
 ## linux shell high 20180629  day02
-## java conrrent    20180630  day03
+## java conrrent nginx   20180630  day03
