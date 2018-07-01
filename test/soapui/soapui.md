@@ -98,20 +98,17 @@ Initial WSDL：http://ws.webxml.com.cn/WebServices/MobileCodeWS.asmx?wsdl 为接
 ![](https://i.imgur.com/brloqQe.png)
 以本地查询发布会接口为例。
 
-URI：http://127.0.0.1:8000/events/ 为接口URI。
-![](https://i.imgur.com/CzMsmoZ.png)
+URI：http://www.kuaidi100.com 为接口URI。
+![](https://i.imgur.com/CRLD4cm.png)
+
 点击 OK 按钮，创建项目完成。
 
-依次展开：REST Project 1–>Events[/events/]–>Events–>Request 1 , 为 REST 接口窗口
+如图所示 输入参数
 
-![](https://i.imgur.com/jcfHOb9.png)
+![](https://i.imgur.com/I97Ua1K.png)
 
-点击 Request 1 窗口中左上角的绿色 运行 按钮，右则窗口显示接口查询结果。
-
-如果想查询具体的某一条发布会信息，可以在 Resource 输入框中指定发布会 id，如下图。
-![](https://i.imgur.com/nbHI3hR.png)
-点击 Request 1 窗口中左上角的绿色 运行 按钮，右则窗口显示接口查询结果，下图
-![](https://i.imgur.com/LvqOyXq.png)
+结果如下
+![](https://i.imgur.com/IpQ5Uzb.png)
 
 ##（七）soapUI设置Auth
 
