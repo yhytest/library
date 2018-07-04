@@ -22,3 +22,4 @@ July August September October November December
 ## 7.1 day04 content:ActiveMQ
 ## 7.2 day05 content:RPC NIO
 ## 7.3 day06 content:hadoop Mapreduce
+## 7.4 day07 hdfs
