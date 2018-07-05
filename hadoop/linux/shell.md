@@ -353,7 +353,7 @@
 * chgrp group1 file1 改变文件的群组  
 
 ##网络与工具
-
+ 
 * netstat 显示网络状态信息
 * ifconfig eth0 网卡网络配置详解 
 * ping 测试网络的连通性

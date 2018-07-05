@@ -130,7 +130,7 @@ hamcrest-library-1.3.ORC2.jar：包含各种断言，补充hamcrest core包中�
 		}
 
 		//验证抛出异常
-		@Test(expected=ArithmeticException.class)
+		@Test(expected=Arithmetic****_`_**````````**_`_****Exception.class)
 		public void testDivision() {
 			//被除数不能为0 抛出异常符合预期
 			new Count().division(8, 0);

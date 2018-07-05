@@ -394,7 +394,7 @@ this（参数）：在自身构造方法内部调用其它构造方法。
 this.成员变量：调用本类中的成员变量。
 
 
-	public class Son2 {
+	public class Son2  extends Father {
 
 		//定义成员变量
 		private String name; // 实例化对象时，默认值是null

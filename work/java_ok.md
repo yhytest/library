@@ -598,8 +598,6 @@ Service是基于网络的、分布式的模块化组件，它执行特定的任�
 Service能与其他兼容的组件进行互操作。
 JAXP(Java API for XML Parsing) 定义了在Java中使用DOM, SAX, 
 XSLT的通用的接口。这样在你的程序中你只要使用这些通用的接口，当你需要改变具体的实现时候也不需要修改代码。
-JAXM(Java API for XML Messaging) 
-是为SOAP通信提供访问方法和传输机制的API。
 WSDL是一种 XML 
 格式，用于将网络服务描述为一组端点，这些端点对包含面向文档信息或面向过程信息的消息进行操作。这种格式首先对操作和消息进行抽象描述，然后将其绑定到具体的网络协议和消息格式上以定义端点。相关的具体端点即组合成为抽象端点（服务）。
 SOAP即简单对象访问协议(Simple Object Access 
@@ -802,3 +800,5 @@ JVM的堆是运行时数据区，所有类的实例和数组都是在堆上分�
 阅读原文
 阅读 2195
 13投诉
+JAXM(Java API for XML Messaging) 
+是为SOAP通信提供访问方法和传输机制的API。
